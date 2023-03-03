@@ -81,7 +81,7 @@ var generateGame = () => {
        </div>
     `
     
-    var parser = new DOMParser().parseFromString(cards, 'text/html')    // *****
+    var parser = new DOMParser().parseFromString(cards, 'text/html')    // creat interface analysis will analys a string text with HTML 
     Objets.board.replaceWith(parser.querySelector('.board'))
 }
 
@@ -99,7 +99,7 @@ var startGame = () => {
 
 
 var flipBackCards = () => {
-    document.querySelectorAll('.card:not(.matched)').forEach(card => {         //**** */
+    document.querySelectorAll('.card:not(.matched)').forEach(card => {         //you will not matched the card after flip**
         card.classList.remove('flipped')
     })
 
@@ -157,9 +157,7 @@ var attachEventListeners = () => {
 
         if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
             flipCard(eventParent)
-        } else if (eventTarget.nodeName === ('BUTTON') && !eventTarget.className.includes('disabled')) {
-            startGame()
-        }
+        } 
     })
 }
 
